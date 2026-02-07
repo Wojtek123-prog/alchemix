@@ -1,11 +1,212 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Alchemix działa!</title>
-  </head>
-  <body>
-    <h1>Witaj w Alchemix!</h1>
-    <p>Twoja aplikacja została poprawnie połączona z Azure Static Web Apps.</p>
-  </body>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alchemix – AI dla zwierząt | Opieka, diagnostyka, produkty</title>
+  <meta name="description" content="Alchemix – inteligentna platforma dla właścicieli psów i kotów. AI analizuje zachowanie, rekomenduje karmę i suplementy, łączy z opiekunami i sklepem." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --primary-dark: #00a3cc;
+      --dark: #0d1117;
+      --gray: #161b22;
+      --light: #e6f3ff;
+      --accent: #ff6bcb;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0d1117 0%, #1a2634 100%);
+      color: #e6f3ff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,212,255,0.15);
+    }
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(0,212,255,0.5);
+    }
+    .nav-links a {
+      color: #e6f3ff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    main {
+      padding-top: 120px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 8rem;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
+      border-radius: 16px;
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      color: #c9d1d9;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--dark);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.3);
+    }
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,212,255,0.5);
+      background: var(--primary-dark);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    .feature-card {
+      background: rgba(22,27,34,0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.4s;
+    }
+    .feature-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.15);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    .feature-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      color: #8b949e;
+      border-top: 1px solid rgba(0,212,255,0.1);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { margin-top: 1rem; }
+      .nav-links a { margin: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Alchemix</div>
+      <div class="nav-links">
+        <a href="#features">Funkcje</a>
+        <a href="#start">Start</a>
+        <a href="https://alchemiaai.pl">AlchemiaAI PSA</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Alchemix</h1>
+      <p>Inteligentna platforma dla psów i kotów – AI, które rozumie Twoje zwierzę lepiej niż Ty sam.</p>
+      <a href="#start" class="cta-btn">Wypróbuj za darmo (beta)</a>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🩺</div>
+        <h3>Weterynarz AI</h3>
+        <p>Analiza objawów, wideo i zachowania – sugestie, kiedy jechać do weterynarza. Nigdy więcej paniki w nocy.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📹</div>
+        <h3>Analiza wideo</h3>
+        <p>Nagraj dziwne zachowanie – AI wykryje kulawiznę, ból, agresję czy apatię. Raport w 30 sekund.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🛒</div>
+        <h3>Inteligentny sklep</h3>
+        <p>AI dobiera karmę i suplementy pod rasę, wiek, wagę i objawy Twojego pupila. Bez błędów.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧑‍🤝‍🧑</div>
+        <h3>Opieka na żądanie</h3>
+        <p>Spacery, hotel, wizyty domowe – rezerwacje z kalendarzem i płatnościami w aplikacji.</p>
+      </div>
+    </section>
+
+    <section id="start" style="text-align:center; padding:6rem 1rem;">
+      <h2 style="font-family:'Orbitron',sans-serif; color:var(--primary); margin-bottom:2rem;">Gotowy zacząć?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">Dołącz do bety Alchemix – pierwsza 30 dni za darmo. Pomóż nam stworzyć najlepszą platformę dla zwierząt w Polsce.</p>
+      <a href="https://forms.gle/TwojFormularz" class="cta-btn" style="font-size:1.4rem; padding:1.2rem 3rem;">Dołącz do bety</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Alchemix – część <a href="https://alchemiaai.pl">AlchemiaAI PSA</a> | © 2026 | <a href="mailto:hello@alchemix.pl">hello@alchemix.pl</a></p>
+  </footer>
+
+</body>
 </html>

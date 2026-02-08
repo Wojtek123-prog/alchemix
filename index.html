@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alchemix – AI dla zwierząt | Opieka, diagnostyka, produkty</title>
-  <meta name="description" content="Alchemix – inteligentna platforma dla właścicieli psów i kotów. AI analizuje zachowanie, rekomenduje karmę i suplementy, łączy z opiekunami i sklepem." />
+  <title>Alchemix – AI, które rozumie Twojego pupila</title>
+  <meta name="description" content="Alchemix – platforma dla opiekunów psów i kotów. AI analizuje zachowanie, dobiera karmę, łączy z opiekunami i sklepem. Dołącz do bety." />
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,39 +13,39 @@
 
   <style>
     :root {
-      --primary: #00d4ff;
-      --primary-dark: #00a3cc;
-      --accent: #ff6bcb;
-      --dark: #0d1117;
-      --gray: #161b22;
-      --light: #e6f3ff;
+      --primary: #7c3aed;      /* głęboki fiolet alchemiczny */
+      --primary-light: #a78bfa;
+      --accent-gold: #fbbf24;   /* złoto/bursztyn – magia transformacji */
+      --dark: #0f172a;
+      --gray: #1e293b;
+      --light: #f1f5f9;
+      --warm: #fef3c7;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0d1117, #1a2634);
+      background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
       color: var(--light);
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    /* HEADER */
     header {
-      background: rgba(13,17,23,0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(12px);
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(0,212,255,0.15);
+      border-bottom: 1px solid rgba(124,58,237,0.2);
     }
 
     nav {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,210 +53,193 @@
 
     .logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       font-weight: 700;
-      color: var(--primary);
-      text-shadow: 0 0 15px rgba(0,212,255,0.5);
+      color: var(--primary-light);
+      text-shadow: 0 0 20px rgba(124,58,237,0.4);
+      position: relative;
+    }
+
+    .logo::after {
+      content: "∆";
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      position: absolute;
+      top: -8px;
+      right: -18px;
+      opacity: 0.7;
     }
 
     .nav-links a {
       color: var(--light);
       text-decoration: none;
-      margin-left: 2rem;
+      margin-left: 2.2rem;
       font-weight: 500;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover { color: var(--primary-light); }
 
-    /* MAIN */
     main {
+      padding-top: 130px;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 140px 2rem 2rem;
+      padding: 2rem;
     }
 
-    /* HERO */
     .hero {
       text-align: center;
-      padding: 6rem 1rem 8rem;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)),
-        url('https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=2940&auto=format&fit=crop')
-        center/cover no-repeat;
-      border-radius: 16px;
-      margin-bottom: 4rem;
+      padding: 7rem 1rem 9rem;
+      background: linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.4)),
+        url('https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=2940&auto=format&fit=crop') center/cover;
+      border-radius: 24px;
+      margin-bottom: 5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.8rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      font-size: 4.2rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(90deg, var(--primary-light), var(--accent-gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      color: #c9d1d9;
+      font-size: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto 3rem;
+      color: #e2e8f0;
     }
 
     .cta-btn {
       display: inline-block;
-      background: var(--primary);
-      color: var(--dark);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-weight: bold;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 60px;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 1.2rem;
-      transition: 0.3s;
-      box-shadow: 0 10px 30px rgba(0,212,255,0.3);
+      font-size: 1.4rem;
+      transition: all 0.4s;
+      box-shadow: 0 12px 40px rgba(124,58,237,0.4);
     }
 
     .cta-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(0,212,255,0.5);
-      background: var(--primary-dark);
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 20px 60px rgba(124,58,237,0.6);
     }
 
-    /* FEATURES */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      margin: 5rem 0;
     }
 
     .feature-card {
-      background: rgba(22,27,34,0.6);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,212,255,0.15);
-      border-radius: 16px;
-      padding: 2.5rem;
-      transition: 0.4s;
+      background: rgba(30,41,59,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 20px;
+      padding: 2.8rem;
+      transition: all 0.4s;
+      text-align: center;
     }
 
     .feature-card:hover {
-      transform: translateY(-12px);
-      border-color: var(--primary);
-      box-shadow: 0 20px 40px rgba(0,212,255,0.15);
+      transform: translateY(-16px);
+      border-color: var(--primary-light);
+      box-shadow: 0 25px 60px rgba(124,58,237,0.25);
     }
 
     .feature-icon {
-      font-size: 3rem;
+      font-size: 4rem;
       margin-bottom: 1.5rem;
-      color: var(--primary);
+      color: var(--accent-gold);
     }
 
     .feature-card h3 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: var(--primary);
+      color: var(--primary-light);
     }
 
-    /* START SECTION */
-    #start {
-      text-align:center;
-      padding:6rem 1rem;
-    }
-
-    #start h2 {
-      font-family:'Orbitron',sans-serif;
-      color:var(--primary);
-      margin-bottom:2rem;
-    }
-
-    #start p {
-      font-size:1.3rem;
-      max-width:700px;
-      margin:0 auto 2.5rem;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
-      padding: 4rem 1rem 2rem;
-      color: #8b949e;
-      border-top: 1px solid rgba(0,212,255,0.1);
+      padding: 5rem 1rem 3rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(124,58,237,0.15);
     }
 
-    footer a { color: var(--primary); }
+    footer a { color: var(--primary-light); text-decoration: none; }
 
-    /* MOBILE */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      nav { flex-direction: column; gap: 1rem; }
+      .hero h1 { font-size: 3rem; }
+      nav { flex-direction: column; gap: 1.2rem; }
       .nav-links { margin-top: 1rem; }
-      .nav-links a { margin: 0 1rem; }
+      .nav-links a { margin: 0 1.2rem; }
     }
   </style>
 </head>
-
 <body>
 
   <header>
     <nav>
       <div class="logo">Alchemix</div>
       <div class="nav-links">
-        <a href="#features">Funkcje</a>
-        <a href="#start">Start</a>
-        <a href="https://alchemiaai.pl">AlchemiaAI PSA</a>
+        <a href="#features">Co potrafimy</a>
+        <a href="#start">Dołącz do bety</a>
+        <a href="https://alchemiaai.pl">Matka AlchemiaAI</a>
       </div>
     </nav>
   </header>
 
   <main>
-
     <section class="hero">
       <h1>Alchemix</h1>
-      <p>Inteligentna platforma dla psów i kotów – AI, które rozumie Twoje zwierzę lepiej niż Ty sam.</p>
-      <a href="#start" class="cta-btn">Wypróbuj za darmo (beta)</a>
+      <p>Platforma, która rozumie Twojego psa lub kota lepiej niż ktokolwiek inny. AI, które pomaga, gdy najbardziej tego potrzebujesz.</p>
+      <a href="#start" class="cta-btn">Dołącz do zamkniętej bety – za darmo</a>
     </section>
 
     <section id="features" class="features">
-
       <div class="feature-card">
         <div class="feature-icon">🩺</div>
-        <h3>Weterynarz AI</h3>
-        <p>Analiza objawów, wideo i zachowania – sugestie, kiedy jechać do weterynarza.</p>
+        <h3>Weterynarz w kieszeni</h3>
+        <p>Nagraj zachowanie pupila – AI powie Ci, czy to zwykła apatia, czy coś poważnego. I kiedy naprawdę trzeba do lekarza.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">📹</div>
         <h3>Analiza wideo</h3>
-        <p>Nagraj zachowanie – AI wykryje kulawiznę, ból, agresję czy apatię.</p>
+        <p>Kulawizna, drapanie, agresja, brak apetytu – wrzuć filmik, a Alchemix pokaże, co może być przyczyną.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🛒</div>
-        <h3>Inteligentny sklep</h3>
-        <p>AI dobiera karmę i suplementy pod rasę, wiek, wagę i objawy.</p>
+        <div class="feature-icon">🍖</div>
+        <h3>Perfekcyjna karma i suplementy</h3>
+        <p>AI dobierze wszystko pod rasę, wiek, wagę, alergie i aktualne potrzeby Twojego zwierzaka.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">🧑‍🤝‍🧑</div>
-        <h3>Opieka na żądanie</h3>
-        <p>Spacery, hotel, wizyty domowe – rezerwacje i płatności w aplikacji.</p>
+        <h3>Opieka na wyciągnięcie ręki</h3>
+        <p>Spacery, hotel, wizyty domowe – rezerwacje 24/7 z kalendarzem i płatnościami w aplikacji.</p>
       </div>
-
     </section>
 
     <section id="start">
-      <h2>Gotowy zacząć?</h2>
-      <p>Dołącz do bety Alchemix – pierwsze 30 dni za darmo. Pomóż nam stworzyć najlepszą platformę dla zwierząt w Polsce.</p>
-      <a href="https://forms.gle/TwojFormularz" class="cta-btn" style="font-size:1.4rem; padding:1.2rem 3rem;">Dołącz do bety</a>
+      <h2>Chcesz być wśród pierwszych?</h2>
+      <p>Dołącz do zamkniętej bety Alchemix – pierwsze 30 dni całkowicie za darmo. Pomóż nam stworzyć coś naprawdę wyjątkowego dla naszych pupili.</p>
+      <a href="https://forms.gle/TwojFormularz" class="cta-btn" style="font-size:1.5rem; padding:1.4rem 3.5rem;">Tak, chcę być testerem</a>
     </section>
-
   </main>
 
   <footer>
-    <p>Alchemix – część <a href="https://alchemiaai.pl">AlchemiaAI PSA</a> | © 2026 | <a href="mailto:hello@alchemix.pl">hello@alchemix.pl</a></p>
+    <p>Alchemix – córka <a href="https://alchemiaai.pl">AlchemiaAI PSA</a> | © 2026 | <a href="mailto:hello@alchemix.pl">hello@alchemix.pl</a></p>
   </footer>
 
 </body>
 </html>
-
